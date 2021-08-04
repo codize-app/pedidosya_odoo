@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_company_page_pedidosya">
+            <field name="name">res.company.form.pedidosya</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <notebook>
+                        <page string="PedidosYa">
+                            <div class="oe_button_box" name="button_box_py" style="width: auto;">
+            					<button name='action_py_login' type="object"
+            					string="Obtener Token"
+                                title="Obtener Token PedidosYa"
+                                class="oe_stat_button"
+                                icon="fa-user-circle"/>
+                                <button name='action_py_import' type="object"
+            					string="Importar Pedidos"
+                                title="Importar Pedidos desde PedidosYa"
+                                class="oe_stat_button"
+                                icon="fa-cloud-download"/>
+                            </div>
+
+                            <group>
+                                <field name="py_client_id" />
+                                <field name="py_client_secret" />
+                                <field name="py_username" />
+                                <field name="py_password" />
+                                <field name="py_token" readonly="True" />
+                            </group>
+                        </page>
+                    </notebook>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>
